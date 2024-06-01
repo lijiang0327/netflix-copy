@@ -1,7 +1,6 @@
 'use client'
 
-import { Select as NextSelect } from '@nextui-org/react'
-import { extendVariants } from '@nextui-org/react'
+import { Select as NextSelect, extendVariants } from '@nextui-org/react'
 
 const Select = extendVariants(NextSelect, {
   variants: {
