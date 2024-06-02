@@ -2,7 +2,7 @@
 
 import { Select as NextSelect, extendVariants } from '@nextui-org/react'
 
-const Select = extendVariants(NextSelect, {
+export const Select = extendVariants(NextSelect, {
   variants: {
     color: {
       primary: {
@@ -10,8 +10,7 @@ const Select = extendVariants(NextSelect, {
         trigger: "!bg-transparent border-1 rounded-md border-border-gray hover:bg-transparent",
         value: "text-text-white",
         selectorIcon: "text-text-white",
-        popoverContent: "bg-transparent"
-
+        popoverContent: "bg-transparent bg-bg-black"
       }
     }
   },
@@ -21,5 +20,3 @@ const Select = extendVariants(NextSelect, {
 })
 
 Select.displayName = 'Select'
-
-export { Select }

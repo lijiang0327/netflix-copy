@@ -15,7 +15,7 @@ export const GetStarted: FC<GetStartedProps> = ({ className }) => {
       className
     )
   }>
-    <p className="text-[24px]">
+    <p className="text-[24px] text-center">
       Ready to watch? Enter your email to create or restart your membership.
     </p>
     <div className="flex items-center justify-center gap-2">

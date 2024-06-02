@@ -7,7 +7,6 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -18,10 +17,13 @@ const config: Config = {
       colors: {
         bg: {
           black: "#000000",
+          gray: "rgb(35, 35, 35)",
+          "gray-2": "rgb(45, 45, 45)",
         },
         text: {
           white: "#FFFFFF",
           red: "rgb(229, 9, 20)",
+          blue: "rgb(0, 113, 235)",
         },
         border: {
           white: "#FFFFFF",

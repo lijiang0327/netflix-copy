@@ -20,7 +20,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
         <Link href='/'>
           <NetflixIcon width={148} height={40} className='text-text-red' />
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           <LanguageDropdown />
           <Button size='sm'>Sign In</Button>
         </div>
