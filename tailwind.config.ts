@@ -14,11 +14,15 @@ const config: Config = {
         banner:
           "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);",
       },
+      backgroundSize: {
+        "125%": "125%",
+      },
       colors: {
         bg: {
           black: "#000000",
           gray: "rgb(35, 35, 35)",
           "gray-2": "rgb(45, 45, 45)",
+          "gray-3": "#393939",
         },
         text: {
           white: "#FFFFFF",
@@ -36,6 +40,12 @@ const config: Config = {
           },
         },
       },
+    },
+    screens: {
+      sm: "600px",
+      md: "960px",
+      lg: "1280px",
+      xl: "1920px",
     },
   },
   darkMode: "class",
