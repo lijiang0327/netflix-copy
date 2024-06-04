@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/react";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { NextSeo } from "next-seo";
 
 import "../globals.css";
 
@@ -23,16 +22,6 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className="bg-bg-black min-h-screen text-text-white">
-        <NextSeo
-          title="Netflix Copy"
-          description="Netflix copy"
-          canonical=""
-          openGraph={{
-            url: "",
-            title: "",
-            description: "",
-          }}
-        ></NextSeo>
         <NextIntlClientProvider messages={{ ...messages }}>
           <NextUIProvider>
             {children}
