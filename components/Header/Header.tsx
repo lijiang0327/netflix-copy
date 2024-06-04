@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import { FC } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 import { LanguageDropdown } from '../LanguageDropdown/LanguageDropdown'
 import { Button } from '../Button/Button'
@@ -11,6 +12,8 @@ export interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ className }) => {
+  const t = useTranslations("Common")
+
   return (
     <div className={clsx(
       'absolute top-0 w-full z-20 flex items-center justify-center',
@@ -22,7 +25,7 @@ export const Header: FC<HeaderProps> = ({ className }) => {
         </Link>
         <div className="flex items-center gap-3 sm:gap-6">
           <LanguageDropdown />
-          <Button size='sm'>Sign In</Button>
+          <Button size='sm'>{t("signIn")}</Button>
         </div>
       </div>
     </div >

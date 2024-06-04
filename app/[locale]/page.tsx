@@ -2,6 +2,8 @@
 
 import { Image, Accordion, AccordionItem } from '@nextui-org/react'
 import { PlusIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 import { Footer } from "@/components/Footer/Footer";
 import { GetStarted } from "@/components/GetStarted/GetStarted";
@@ -9,51 +11,57 @@ import { Header } from "@/components/Header/Header";
 import { Divider } from "@/components/Divider/Divider";
 import { HomeSection } from "@/components/HomeSection/HomeSection";
 
-export default function Home() {
+const Home = () => {
+  const { locale } = useParams()
+
+  console.log(locale)
+
+  const t = useTranslations("Index")
+
   const questionsData = [
     {
-      title: "What is Netflix?",
+      title: t("question1Title"),
       content: <p>
-        Netflix is a streaming service that offers a wide variety of award-winning TV programmes, films, anime, documentaries and more – on thousands of internet-connected devices.
+        {t("question1Desc")}
         <br />
         <br />
-        You can watch as much as you want, whenever you want, without a single advert – all for one low monthly price. There&apos;s always something new to discover, and new TV programmes and films are added every week!
+        {t("question1Desc2")}
       </p>
     },
     {
-      title: "How much does Netflix cost?",
+      title: t("question2Title"),
       content: <p>
-        Watch Netflix on your smartphone, tablet, smart TV, laptop or streaming device, all for one fixed monthly fee. Plans range from $13.98 to $25.98 a month. No extra costs, no contracts.
+        {t("question2Desc")}
       </p>
     },
     {
-      title: "Where can I watch?",
+      title: t("question3Title"),
       content: <p>
-        Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+        {t("question3Desc")}
         <br />
         <br />
-        You can also download your favourite programmes with the iOS or Android app. Use downloads to watch while you&apos;re on the go and without an internet connection. Take Netflix with you anywhere.
+        {t("question3Desc2")}
       </p>
     },
     {
-      title: "How do I cancel?",
+      title: t("question4Title"),
       content: <p>
-        Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account at any time.
+        {t("question4Desc")}
       </p>
     },
     {
-      title: "What can I watch on Netflix?",
+      title: t("question5Title"),
       content: <p>
-        Netflix has an extensive library of feature films, documentaries, TV programmes, anime, award-winning Netflix originals, and more. Watch as much as you want, any time you want.
+        {t("question5Desc")}
       </p>
     },
     {
-      title: "Is Netflix good for children?",
+      title: t("question6Title"),
       content: <p>
-        The Netflix Children&apos;s experience is included in your membership to give parents control while children enjoy family-friendly TV programmes and films in their own space.
+        {t("question6Desc")}
         <br />
         <br />
-        Children&apos;s profiles come with PIN-protected parental controls that let you restrict the maturity rating of content children can watch and block specific titles you don’t want children to see.
+        {t("question6Desc2")}
       </p>
     }
   ]
@@ -65,19 +73,21 @@ export default function Home() {
         <Image src="/images/jpg/banner.jpg" alt="banner" className="object-cover h-[500px] md:h-fit min-h-full scale-125 translate-y-[-10%]" />
         <div className="w-full h-full bg-banner flex items-center justify-center absolute top-0 z-10">
           <div className="flex items-center px-6 justify-center flex-col w-full h-full bg-bg-black bg-opacity-40">
-            <h1 className="mt-[64px] md:mt-0 text-[32px] leading-10 font-[700] md:text-[48px] md:leading-[56px] md:font-[900] text-center">Unlimited movies, TV shows, and more</h1>
-            <p className="text-lg md:text-[24px] mt-4 text-center">
-              Watch anywhere. Cancel anytime.
+            <h1 className="mt-[64px] md:mt-0 text-[32px] leading-10 font-[700] md:text-[48px] md:leading-[56px] md:font-[900] text-center">
+              {t("bannerTitle")}
+            </h1>
+            <p className="text-lg md:text-[24px] mt-8 text-center">
+              {t("bannerDescription")}
             </p>
-            <GetStarted className="mt-4" />
+            <GetStarted className="mt-8" />
           </div>
         </div>
       </div>
       <Divider />
       <HomeSection
         className="flex-col md:flex-row"
-        title="Enjoy on your TV"
-        description="Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more."
+        title={t("section1Title")}
+        description={t("section1Description")}
       >
         <div className='w-full relative'>
           <Image src="/images/png/tv.png" width="full" alt="tv" classNames={{
@@ -93,8 +103,8 @@ export default function Home() {
       <Divider />
       <HomeSection
         className="flex-col md:flex-row-reverse"
-        title="EDownload your shows to watch offline"
-        description="Save your favorites easily and always have something to watch."
+        title={t("section2Title")}
+        description={t("section2Description")}
       >
         <div className='w-full relative'>
           <Image src="/images/jpg/mobile.jpg" width="full" alt="tv" classNames={{
@@ -116,8 +126,8 @@ export default function Home() {
       <Divider />
       <HomeSection
         className="flex-col md:flex-row"
-        title="Watch everywhere"
-        description="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
+        title={t("section3Title")}
+        description={t("section3Description")}
       >
         <div className='w-full relative'>
           <Image src="/images/png/device-pile.png" width="full" alt="tv" classNames={{
@@ -133,8 +143,8 @@ export default function Home() {
       <Divider />
       <HomeSection
         className="flex-col md:flex-row-reverse"
-        title="Create profiles for kids"
-        description="Send kids on adventures with their favorite characters in a space made just for them—free with your membership."
+        title={t("section4Title")}
+        description={t("section4Description")}
       >
         <div className='w-full relative'>
           <Image src="/images/png/section-4.png" width="full" alt="tv" classNames={{
@@ -145,7 +155,9 @@ export default function Home() {
       </HomeSection>
       <Divider />
       <div className="py-[72px] flex flex-col md:box-content items-center w-[calc(100%-48px)] sm:w-[calc(100%-64px)] md:w-[calc(100%-64px)] lg:w-[calc(83.33%-96px)] xl:w-[calc(66.66%-96px)] mx-auto">
-        <h2 className="text-[32px] md:text-5xl font-bold md:text-left text-center">Frequently Asked Questions</h2>
+        <h2 className="text-[32px] md:text-5xl font-bold md:text-left text-center">
+          {t("frequentlyAskedQuestions")}
+        </h2>
         <div className="w-full mt-6 mb-8">
           <Accordion>
             {questionsData.map(({ title, content }, index) => {
@@ -172,10 +184,12 @@ export default function Home() {
 
           </Accordion>
         </div>
-        <GetStarted className='px-8 md:px-6' />
+        <GetStarted />
       </div>
       <Divider />
       <Footer />
     </div>
   );
 }
+
+export default Home;
