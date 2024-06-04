@@ -72,11 +72,11 @@ const Home = () => {
       <NextSeo
         title="Netflix Copy"
         description="Netflix copy"
-        canonical="https://www."
+        canonical="https://netflix-copy-ebon.vercel.app/"
         openGraph={{
-          url: "",
-          title: "",
-          description: "",
+          url: "https://netflix-copy-ebon.vercel.app/",
+          title: "Netflix copy",
+          description: "Netflix copy",
         }}
       ></NextSeo>
       <div className='w-full overflow-hidden'>
