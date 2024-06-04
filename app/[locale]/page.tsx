@@ -15,8 +15,6 @@ import { HomeSection } from "@/components/HomeSection/HomeSection";
 const Home = () => {
   const { locale } = useParams()
 
-  console.log(locale)
-
   const t = useTranslations("Index")
 
   const questionsData = [
@@ -159,7 +157,7 @@ const Home = () => {
           description={t("section4Description")}
         >
           <div className='w-full relative'>
-            <Image src="/images/png/section-4.png" width="full" alt="tv" classNames={{
+            <Image src={locale === 'zh' ? "/images/png/section-4-zh.png" : "/images/png/section-4.png"} width="full" alt="tv" classNames={{
               img: "w-full max-w-full",
               wrapper: "w-full"
             }} />
